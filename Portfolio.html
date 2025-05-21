@@ -1,90 +1,563 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shatakshi Joshi - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        header {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-        .picture-img {
-             display: block;
-             margin: 20px auto;
-             width: 120px;
-             height: 120px;
-             border-radius: 50%;
-             border: 3px solid #131212;
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hey! I'm Shatakshi Joshi</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f9f3ef;
+      color: #4a3b2f;;
+      text-align: center;
+    }
+    header {
+      background-color: #f9f3ef;
+      padding: 30px 20px;
+      text-align: center;
+
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+      color:  #4a3b2f;
+    }
+#about {
+  background-color: #f8f1ea; /* Light beige brown */
 }
 
-        section {
-            padding: 20px;
-            background: white;
-            margin: 20px 0;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #333;
-        }
-        .contact {
-            text-align: center;
-            padding: 20px;
-        }
-        .contact a {
-            color: #333;
-            text-decoration: none;
-            font-weight: bold;
-        }
-    </style>
+#experience {
+  background-color: #f3e5dc; /* Light latte */
+}
+
+#skills {
+  background-color: #e9dcd1; /* Soft mocha */
+}
+
+#gallery {
+  background-color: #e3cfc1; /* Light caramel */
+}
+
+#projects {
+  background-color: #d9c4b0; /* Soft almond */
+}
+
+#contact {
+  background-color: #cdb8a3; /* Muted taupe */
+}
+section {
+  border-bottom: 1px solid #8e735b; /* Thin brown line */
+  padding: 40px 20px;
+  margin: 40px 0;
+  background-color: #f7efe8;
+  border: 1px solid #c9b6a0;
+  border-radius: 25px;
+  max-width: 1000px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+    .profile-pic {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-top: 20px;
+      border: 6px solid #8e735b;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .profile-pic:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+nav a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #A67B5B;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus,
+nav a:active {
+  background-color: #8e735b;
+  transform: scale(1.1); /* Pop effect */
+}
+
+
+
+
+    h2 {
+      color: #8e735b;
+      font-size: 2.5em;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    h3 {
+      color: #8e735b;
+      font-size: 2.5em;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    p {
+        font-size: 1.3em;
+        font-weight: bold;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .photo-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .photo-gallery img {
+      width: 250px;
+      height: 350px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .photo-gallery img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    .skills-list, .education-list {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .skills-list li, .education-list li {
+  background-color: #8e735b;
+  color: white;
+  border-radius: 50%;
+  padding: 20px;
+  font-size: 1.1em;
+  font-weight: bold;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.3;
+  word-wrap: break-word;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-list li:hover, 
+.skills-list li:focus,
+.skills-list li:active,
+.education-list li:hover, 
+.education-list li:focus,
+.education-list li:active {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+    #projects {
+        padding: 60px 20px;
+        display:block;
+        width: 100%;
+        padding: 60px 20px;
+        background-color: #fef3e7;
+        text-align: center;
+    }
+    #project h2 {
+        color: #8e735b;
+        font-size: 2.5em;
+        margin-bottom: 40px;
+    }
+    .project-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        justify-content: center;
+    }
+
+.project-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+    #projects {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #fef3e7;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.project-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 15px;
+  width: 300px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.project-group {
+  background-color: #f3e9e1; /* soft pastel box */
+  border-radius: 16px;
+  padding: 30px 20px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease;
+}
+/* CAED Project box - soft mid-tone brown */
+.caed-group {
+  background-color: #dbc3aa; /* medium pastel brown */
+}
+
+/* Cable Organiser Project box - slightly deeper brown */
+.cable-group {
+  background-color: #c7ab91; /* deeper pastel brown */
+}
+.project-group:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.project-group h3 {
+  color: #8e735b;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.contact {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+    .contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-button {
+  background-color: #8e735b;
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #5c4533;
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+      background-color: #fef3e7;
+      text-align: center;
+      padding: 25px;
+      color: #8e735b;
+      margin-top: 60px;
+    }
+    body {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards;
+  margin: 0;
+  padding: 0;
+
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+@media (max-width: 600px) {
+  .skills-list li,
+  .education-list li {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .profile-pic {
+    width: 200px;
+    height: 200px;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+
+  .project-card {
+    width: 90%;
+  }
+  .footer-logos {
+  margin-top: 10px;
+}
+
+.footer-logos a {
+  margin: 0 8px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.footer-logos a:hover {
+  transform: scale(1.2);
+}
+
+.footer-icon {
+  height: 30px;
+  width: 30px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+
+
+
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Shatakshi Joshi</h1>
-        <p>About | Portfolio | Contact</p>
-        <img src="profile picture.jpg" alt="Shatakshi Joshi" class="picture-img">
-    </header>
+  <div class="container">
+  <header>
+    <h1>Hey I'm Shatakshi Joshi</h1>
+    <a href="profile.jpg" data-lightbox="profile" data-title="Hey! I'm Shatakshi Joshi">
+      <img class="profile-pic" src="profile.jpg" alt="Shatakshi's Photo">
+    </a>
     
-    <div class="container">
-        <section>
-            <h2>About Me</h2>
-            <p>Hello and Welcome! I am Shatakshi Joshi, a passionate mechanical engineering student at MITAOE. I am interested in designing, problem-solving, and exploring innovations in engineering.</p>
-        </section>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills & Interests</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hi, I'm Shatakshi Joshi! I'm a mechanical engineering student at MITAOE, Pune, driven by a passion for innovation and problem-solving. With a keen interest in designing efficient systems and exploring cutting-edge technologies, I strive to blend creativity with engineering precision. Welcome to my portfolio, where I showcase my projects, skills, and journey in the world of mechanical engineering!</p>
+  </section>
+
+  <section id="experience">
+    <h2>My Experience So Far</h2>
+    <h3>Education</h3>
+    <ul class="education-list">
+      <li><strong>Pre School:</strong> Little Star English School</li>
+      <li>
+        <strong>High School:</strong>
+        <a href="https://www.podareducation.org/school/latur" target="_blank" style="color: white; text-decoration: underline;">
+          Podar International School
+        </a>
+      </li>
+      <li>
+        <strong>Current UG:</strong> 
+        <a href="https://mitaoe.ac.in" target="_blank" style="color: white; text-decoration: underline;">
+          MITAOE, Alandi, Pune
+        </a>
+      </li>
+      
+      <li><strong>Degree:</strong><br> Bachelor of Technology in Mechanical Engineering</li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills & Interests</h2>
+    <ul class="skills-list">
+      <li>Blog writing & poetry</li>
+      <li>Dance</li>
+      <li>Singing</li>
+      <li>Photography</li>
+      <li>Guitar</li>
+      <li>Public Speaking</li>
+    </ul>
+  </section>
+
+  <!-- Gallery Section -->
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="photo-gallery">
+    <a href="pic.jpg" data-lightbox="gallery" data-title="Photo 1">
+      <img src="pic.jpg" alt="Photo 1" />
+    </a>
+    <a href="sunset.jpg" data-lightbox="gallery" data-title="Sunset">
+      <img src="sunset.jpg" alt="Photo 2" />
+    </a>
+    <a href="good.jpg" data-lightbox="gallery" data-title="Good moment">
+      <img src="good.jpg" alt="Photo 3" />
+    </a>
+    <a href="me.jpg" data-lightbox="gallery" data-title="ME">
+      <img src="me.jpg" alt="ME" />
+    </a>
+    <a href="me2.jpg" data-lightbox="gallery" data-title="Photo 1">
+      <img src="me2.jpg" alt="Photo 1" />
+    </a>
+    <a href="temple.jpg" data-lightbox="gallery" data-title="Photo 1">
+      <img src="temple.jpg" alt="Photo 1" />
+    </a>
+    
+  </div>
+</section>
 
 
+
+
+<section id="projects">
+  <h2>My Projects</h2>
+  <div class="projects-wrapper">
+
+    <!-- CAED PROJECT BOX -->
+    <div class="project-group">
+      <h3>CAED Project</h3>
+      <div class="project-column">
+        <div class="project-card">
+          <a href="model.png" data-lightbox="projects" data-title="MODEL: Screw Organizer - CAED Project">
+            <img src="model.png" alt="Project 1">
+          </a>
+          <p><strong>MODEL:</strong> For our CAED mini project for semester 1, me and my groupmates decided to build a screw organizer. This model can be used for multi purposes (I'm using it now for my jewelry!).</p>
+        </div>
         
-        <section>
-            <h2>Education</h2>
-            <p><strong>MIT Academy of Engineering</strong></p>
-            <p>Bachelor of Technology in Mechanical Engineering</p>
-        </section>
-        
-        <section>
-            <h2>Projects</h2>
-            <ul>
-                <li>Project 1: [Your project title] - Brief description</li>
-                <li>Project 2: [Your project title] - Brief description</li>
-                <li>Project 3: [Your project title] - Brief description</li>
-            </ul>
-        </section>
-        
-        <section class="contact">
-            <h2>Contact Me</h2>
-            <p>Email: <a href="mailto:shatakshijoshi13@gmail.com">shatakshijoshi13@gmail.com</a></p>
-            <p>Contact no: 8010426007</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/shatakshi-joshi-59668224b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Shatakshi Joshi</a></p>
-        </section>
+        <div class="project-card">
+          <a href="fusion.png" data-lightbox="projects" data-title="FUSION MODEL: Designed in Fusion 360 with groupmate Purvi">
+            <img src="fusion.png" alt="Project 2">
+          </a>
+          <p><strong>FUSION MODEL:</strong> This is our fusion model designed by me and my groupmate Purvi before making a prototype.</p>
+        </div>
+
+
+          <div class="project-card">
+          <a href="drafting.png" data-lightbox="projects" data-title="DRAFTING: Technical Drafting of the Fusion Model">
+            <img src="drafting.png" alt="Project 3">
+          </a>
+          <p><strong>DRAFTING:</strong> Drafting of our fusion model is shown here before final presentation.</p>
+        </div>
+      </div>
     </div>
+
+    <!-- CABLE ORGANISER BOX -->
+    <div class="project-group">
+    <div class="project-box">
+      <h3>Cable Organiser Project</h3>
+      <div class="project-column">
+        <div class="project-card">
+          <a href="5.jpg" data-lightbox="projects" data-title="CABLE ORGANISER: CAD model to reduce clutter and manage cables">
+            <img src="5.jpg" alt="Cable Organiser">
+          </a>
+          <p><strong>CABLE ORGANISER:</strong> This project was designed to manage cables efficiently and reduce clutter. It's a simple yet effective solution created for our fab lab project.</p>
+        </div>
+    
+        <div class="project-card">
+          <a href="22.jpg" data-lightbox="projects" data-title="CABLE ORGANISER - PROTOTYPE: Physical version of our model used for organizing USBs and charger wires.">
+            <img src="22.jpg" alt="Cable Organiser">
+          </a>
+          <p><strong>CABLE ORGANISER - PROTOTYPE:</strong> Here's a look at our working prototype built after CAD modeling. It's currently used for organizing USBs and charger wires.</p>
+        </div>
+
+        <div class="project-card">
+          <a href="8.jpg" data-lightbox="projects" data-title="CABLE ORGANISER - Drafting: This is the drafting sheet of our model.">
+            <img src="8.jpg" alt="Cable Organiser">
+          </a>
+          <p><strong>CABLE ORGANISER -Drafting:</strong>Drafting: This is the drafting sheet of our model.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    
+      
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>If you'd like to reach out, feel free to connect via social media or send me a message. I'm always happy to chat!</p>
+        <div class="contact-links">
+          <a href="https://www.instagram.com/swarrxa?igsh=MWFod2N1bDdibG0yNA==" target="_blank" class="contact-button" >Instagram
+            <img src="instagram-logo.png" alt="Instagram" class="footer-icon">
+          </a>
+          <a href="https://www.linkedin.com/in/shatakshi-joshi-59668224b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="contact-button">LinkedIn
+            <img src="linkedin-logo.png" alt="LinkedIn" class="footer-icon">
+          </a>
+          <a href="mailto:shatakshijoshi13@gmail.com" class="contact-button" target="_blank" >Email</a>
+        </div>
+      </section>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+
+      
+
+  <footer>
+    <p>&copy; 2025 Shatakshi. Built with love and creativity.</p>
+  </footer>
+
+  <!-- Add this before </body> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+</div>
 </body>
 </html>
